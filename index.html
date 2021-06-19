@@ -1,49 +1,58 @@
----
-layout: default
----
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ethan Range</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-    <article class="post">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <h1>{{ post.title }}</h1>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-        <div>
-          <p class="post_date">{{ post.date | date: "%B %e, %Y" }}</p>
-        </div>
-      </a>
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img width=140px src="images/profile.png" alt="" /></span>
+							<h1>Ethan Range</h1>
+							<p>Software Engineer</p>
+						</header>
+						
+						<footer>
+							<ul class="icons">
+								<li><a href="mailto:ethan@ethanrange.com" class="fa-envelope" target="_blank">Twitter</a></li>
+								<li><a href="https://github.com/ethanrange" class="fa-github" target="_blank">Github</a></li>
+								<li><a href="https://www.linkedin.com/in/ethanrange" class="fa-linkedin" target="_blank">LinkedIn</a></li>
+							</ul>
+						</footer>
+					</section>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Ethan Range</li>
+						</ul>
+					</footer>
+			</div>
 
-  <!-- pagination -->
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-    {% else %}
-      <span>&laquo; Prev</span>
-    {% endif %}
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
 
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="webjeda">{{ page }}</span>
-      {% elsif page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-      <span>Next &raquo;</span>
-    {% endif %}
-  </div>
-  {% endif %}
-</div>
+	</body>
+</html>
